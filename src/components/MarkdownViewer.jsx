@@ -1,11 +1,13 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
 
 export default function MarkdownViewer({ content, imageMap = {} }) {
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
+      rehypePlugins={[rehypeRaw]}
       components={{
         img: ({ src, alt, ...props }) => {
           const resolvedSrc = src && (imageMap[src] || imageMap[`./${src}`] || src);
