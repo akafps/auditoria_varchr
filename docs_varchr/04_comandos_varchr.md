@@ -9,7 +9,7 @@ El ataque se ejecutó con éxito aprovechando una falta de validación de caract
 * **Resultado observado:** La aplicación ejecutó ambos comandos, mostrando el contenido del archivo `/etc/passwd`, lo que demuestra que el servidor interpreta directamente la entrada del usuario como comandos del sistema operativo.
 
 <div align="center">
-  <img src="img_varchr/cmd_varchr.png" alt="Evidencia Inyección de Comandos" width="90%" />
+  <img src="img_varchr/comandos_varchr.png" alt="Evidencia Inyección de Comandos" width="90%" />
   <p><em>Figura 3.1: Evidencia de ejecución forzada de comandos arbitrarios en el servidor del portal, exponiendo información confidencial del sistema operativo del Hotel Costa Brava.</em></p>
 </div>
 
