@@ -4,7 +4,7 @@
 
 **Hotel Costa Brava**
 
-El Hotel Costa Brava pertenece al rubro de hotelería y turismo, ofreciendo servicios de reservas de habitaciones, alojamiento y atención a pasajeros nacionales e internacionales mediante un portal web.
+El Hotel Costa Brava pertenece al rubro de hotelería y turismo, ofreciendo servicios de reservas de habitaciones, alojamiento y atención a pasajeros nacionales e internacionales mediante su **portal de clientes**.
 
 ## <span style="color:#dc2626;">Objetivo de la Auditoría</span>
 

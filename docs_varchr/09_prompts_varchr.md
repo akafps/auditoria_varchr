@@ -67,6 +67,8 @@
 
 13. Tengo un problema con el menú lateral (Sidebar): cuando entro a la página desde el celular, el menú me tapa toda la pantalla y no me deja leer los informes de los ataques. Dame un código en CSS nativo que use @media para que en pantallas chicas el menú lateral se esconda automáticamente y se transforme en una barra horizontal arriba (Navbar) con los botones más compactos.
 
+14. Quiero estilizar los títulos de los informes de auditoría (los h1, h2 y h3) usando CSS tradicional. Necesito que el título principal (h1) tenga una tipografía moderna y limpia, un tamaño grande pero que no desarme la página, y un color azul marino elegante que combine. Para los subtítulos (h2 y h3), haz que el tamaño baje jerárquicamente, que tengan un color blanco para que contrasten bien y ponles un margen o espacio abajo para que los párrafos de texto no queden pegados.
+
 ---
 
 ## <span style="color:#dc2626;">REFLEXIÓN FINAL</span>
