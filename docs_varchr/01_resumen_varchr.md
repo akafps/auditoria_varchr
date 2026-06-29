@@ -1,16 +1,16 @@
-# Resumen de la Auditoría de Seguridad
+# <span style="color:#dc2626;">Resumen de la Auditoría de Seguridad</span>
 
-## Empresa Auditada
+## <span style="color:#dc2626;">Empresa Auditada</span>
 
 **Hotel Costa Brava**
 
 El Hotel Costa Brava pertenece al rubro de hotelería y turismo, ofreciendo servicios de reservas de habitaciones, alojamiento y atención a pasajeros nacionales e internacionales mediante un portal web.
 
-## Objetivo de la Auditoría
+## <span style="color:#dc2626;">Objetivo de la Auditoría</span>
 
 El objetivo de esta auditoría consiste en identificar vulnerabilidades presentes en un entorno controlado (DVWA), analizar el impacto que podrían generar sobre el negocio del Hotel Costa Brava y proponer medidas de prevención, mitigación y recuperación que permitan fortalecer la seguridad de la información.
 
-## Datos Custodiados
+## <span style="color:#dc2626;">Datos Custodiados</span>
 
 El portal administra información crítica para el funcionamiento del hotel, entre ella:
 
@@ -21,7 +21,7 @@ El portal administra información crítica para el funcionamiento del hotel, ent
 - Datos de empleados.
 - Base de datos de clientes.
 
-## Vulnerabilidades Analizadas
+## <span style="color:#dc2626;">Vulnerabilidades Analizadas</span>
 
 Durante la auditoría se evaluaron tres vulnerabilidades ampliamente conocidas:
 
@@ -31,12 +31,12 @@ Durante la auditoría se evaluaron tres vulnerabilidades ampliamente conocidas:
 
 Cada una fue explotada en un laboratorio controlado para demostrar su impacto y evaluar el riesgo para la organización.
 
-## Impacto para el Negocio
+## <span style="color:#dc2626;">Impacto para el Negocio</span>
 
 Si estas vulnerabilidades existieran en el portal del Hotel Costa Brava, un atacante podría acceder a información confidencial de clientes, modificar reservas, ejecutar código malicioso en los navegadores de los usuarios e incluso obtener control parcial del servidor.
 
 Las consecuencias incluirían pérdidas económicas, daño reputacional, incumplimiento de la Ley N° 19.628 sobre Protección de Datos Personales y disminución de la confianza de los clientes.
 
-## Objetivo Final
+## <span style="color:#dc2626;">Objetivo Final</span>
 
 La finalidad del informe es proponer medidas de seguridad que reduzcan la probabilidad de explotación de estas vulnerabilidades y permitan una adecuada recuperación ante incidentes de ciberseguridad.

@@ -12,7 +12,7 @@ import Recuperacion from "./components/Recuperacion";
 import Prompts from "./components/Prompts";
 
 const sections = [
-  { id: "resumen", label: "Resumen", component: <Resumen /> },
+  { id: "resumen", label: "Resumen Ejecutivo", component: <Resumen /> },
   { id: "sqli", label: "SQL Injection", component: <InyeccionSQL /> },
   { id: "xss", label: "XSS", component: <XSS /> },
   { id: "cmd", label: "Comandos", component: <Comandos /> },
