@@ -9,6 +9,8 @@ export default function Comandos() {
       imageMap={{
         "./img_varchr/comandos_varchr.png": comandosImage,
         "img_varchr/comandos_varchr.png": comandosImage,
+        "./img_varchr/cmd_varchr.png": comandosImage,
+        "img_varchr/cmd_varchr.png": comandosImage,
       }}
     />
   );
