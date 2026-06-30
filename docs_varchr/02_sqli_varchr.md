@@ -8,10 +8,9 @@ El ataque se ejecutó con éxito en el formulario de consulta de ID de usuario d
 * **Payload utilizado:** `' OR '1'='1`
 * **Resultado observado:** El sistema ignoró la restricción del ID original y expuso la totalidad de la base de datos de los clientes registrados (nombres, apellidos y datos asociados).
 
-<div align="center">
-  <img src="img_varchr/sqli_varchr.png" alt="Evidencia Inyección SQL" width="90%" />
-  <p><em>Figura 1.1: Evidencia de explotación de Inyección SQL en el formulario de consulta, logrando la exfiltración masiva de registros en el entorno simulado del portal de clientes del Hotel Costa Brava.</em></p>
-</div>
+![Evidencia Inyección SQL](img_varchr/sqli_varchr.png)
+
+*Figura 1.1: Evidencia de explotación de Inyección SQL en el formulario de consulta, logrando la exfiltración masiva de registros en el entorno simulado del portal de clientes del Hotel Costa Brava.*
 
 ---
 

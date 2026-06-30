@@ -8,10 +8,9 @@ El ataque se ejecutó explotando la falta de validación y codificación en los 
 * **Payload utilizado:** `<script>alert('XSS')</script>`
 * **Resultado observado:** El navegador web interpretó y ejecutó de forma inmediata el código JavaScript inyectado, desplegando una ventana emergente de alerta local.
 
-<div align="center">
-  <img src="img_varchr/xss_varchr.png" alt="Evidencia XSS Reflejado" width="90%" />
-  <p><em>Figura 2.1: Evidencia de inyección de script arbitrario (XSS Reflejado) en el formulario del portal de clientes, simulando el compromiso del entorno web del Hotel Costa Brava.</em></p>
-</div>
+![Evidencia XSS Reflejado](img_varchr/xss_varchr.png)
+
+*Figura 2.1: Evidencia de inyección de script arbitrario (XSS Reflejado) en el formulario del portal de clientes, simulando el compromiso del entorno web del Hotel Costa Brava.*
 
 ---
 
@@ -23,11 +22,13 @@ Esto rompe la barrera de confianza del navegador de la víctima, permitiendo que
 ---
 
 ## 3. Puntaje y Severidad CVSS
-Para evaluar la gravedad de este hallazgo, se estructuró la clasificación bajo el estándar global FIRST (CVSS v3.1):
+Para evaluar la gravedad de este hallazgo, se utilizó la calculadora oficial de FIRST (CVSS v3.1):
 
 | Métrica CVSS 3.1 | Puntuación | Severidad |
 | :--- | :---: | :---: |
-| **CVSS Base Score** | **6.1** | 🟠 **Media** |
+| **CVSS Base Score** | **6.1** | 🟡 **Media** |
+
+
 
 * **Vector de ataque:** `CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N`
 * **Justificación:** El ataque requiere que un usuario caiga en un engaño e interactúe con un enlace malicioso (UI:R). Aunque no compromete el servidor por completo, expone directamente la privacidad de las acciones de los huéspedes en el portal.
@@ -48,6 +49,6 @@ Si esta vulnerabilidad se presentara en producción, un atacante remoto podría:
 * **Codificación de Salida (Context-Aware Output Encoding):** Implementar funciones nativas que conviertan caracteres especiales de HTML (como `<`, `>`, `&`, `"`, `'`) en sus entidades seguras equivalentes antes de renderizarlas en la pantalla.
 * **Implementación de Content Security Policy (CSP):** Configurar cabeceras HTTP que restrinjan estrictamente el origen de ejecución de scripts, bloqueando la inyección e interpretación de código inline malicioso.
 
-### Control de Mitigación (Defensa en Capas)
-* **Atributos de Seguridad en Cookies (Mitigación bajo OWASP Top 10):** Forzar las directivas `HttpOnly` y `Secure` en todas las cookies de sesión del portal para evitar que sean legibles mediante código JavaScript inyectado, neutralizando el impacto del robo de credenciales.
+### Control de Mitigación (Defensa en Capas bajo OWASP Top 10)
+* **Atributos de Seguridad en Cookies:** Forzar las directivas `HttpOnly` y `Secure` en todas las cookies de sesión del portal para evitar que sean legibles mediante código JavaScript inyectado, neutralizando el impacto del robo de credenciales.
 * **Sanitización Automática:** Integrar librerías específicas de sanitización de HTML (como DOMPurify o similares) en el pipeline de datos antes de procesar entradas dinámicas de usuarios.
