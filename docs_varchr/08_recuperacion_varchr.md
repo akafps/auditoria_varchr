@@ -1,54 +1,34 @@
-# Plan de Recuperación ante Desastres (Disaster Recovery)
-
-## Objetivo
-
-Garantizar la continuidad operacional del Hotel Costa Brava frente a incidentes de ciberseguridad que afecten la disponibilidad, integridad o confidencialidad de la información.
+# 🛡️ Plan de Recuperación ante Desastres (DRP)
 
 ---
 
-# Mejoras Tecnológicas
+## 1. Objetivos del Plan (RPO y RTO)
+Este documento establece las directrices técnicas y operacionales del **Hotel Costa Brava** para garantizar la resiliencia y continuidad del negocio ante incidentes críticos de ciberseguridad, como la destrucción del servidor debido a una Inyección de Comandos o la corrupción de bases de datos.
 
-Se recomienda implementar las siguientes mejoras:
-
-- Firewall de Aplicaciones Web (WAF).
-- Sistema de detección de intrusiones (IDS/IPS).
-- Segmentación de la red.
-- Cifrado de bases de datos.
-- Actualización periódica de servidores.
-- Gestión centralizada de parches.
-- Copias de seguridad automáticas.
+* **Objetivo de Punto de Recuperación (RPO):** Máximo **24 horas**. Se tolera una pérdida máxima de un día de transacciones de reservas web.
+* **Objetivo de Tiempo de Recuperación (RTO):** Máximo **4 horas**. El portal de clientes y la pasarela de pagos deben estar en línea y operativos antes de este límite tras declararse el desastre.
 
 ---
 
-# Plan de Recuperación
+## 2. Política de Respaldos (Backup Policy)
+Para cumplir con el RPO, se implementa una estrategia de respaldo automatizada bajo el principio de redundancia:
 
-## Fase 1: Contención
-
-- Identificar el incidente.
-- Aislar el servidor comprometido.
-- Bloquear accesos no autorizados.
-
-## Fase 2: Erradicación
-
-- Eliminar el código malicioso.
-- Corregir la vulnerabilidad explotada.
-- Actualizar los sistemas afectados.
-
-## Fase 3: Recuperación
-
-- Restaurar respaldos.
-- Verificar la integridad de la información.
-- Reanudar los servicios del portal.
-
-## Fase 4: Lecciones Aprendidas
-
-- Analizar la causa raíz.
-- Actualizar políticas de seguridad.
-- Documentar el incidente.
-- Capacitar nuevamente al personal.
+* **Frecuencia:** * **Base de Datos (BD-01):** Respaldos incrementales cada 4 horas y respaldo completo (Full Backup) cada 24 horas a las 02:00 AM.
+  * **Código Fuente y Configuración (HW-01/DOC-01):** Respaldo completo semanal y ante cada actualización o despliegue en producción.
+* **Retención:** Los respaldos completos se retendrán de forma segura por un periodo mínimo de **30 días**.
+* **Almacenamiento:** Copias cifradas (AES-256) almacenadas localmente en un almacenamiento aislado del servidor y una réplica en la nube (AWS S3) georredundante para mitigar el compromiso total del entorno local.
 
 ---
 
-# Beneficios
+## 3. Estrategia de Restauración de Servicios
+En caso de un incidente crítico que comprometa la integridad del sistema operativo por inyección de código:
 
-Este plan permitirá reducir el tiempo de recuperación, minimizar pérdidas económicas y mantener la confianza de los clientes del Hotel Costa Brava ante posibles incidentes de seguridad.
+1. **Aislamiento Inmediato:** Apagado o desconexión de red de la instancia comprometida para evitar movimientos laterales en la infraestructura del hotel.
+2. **Aprovisionamiento:** Despliegue automatizado de una nueva instancia limpia del servidor utilizando el pipeline de integración continua desde el repositorio Git controlado.
+3. **Inyección de Respaldos:** Descarga y montaje del último respaldo de base de datos verificado y libre de anomalías.
+4. **Validación de Seguridad:** Ejecución de un escaneo rápido de vulnerabilidades en el entorno de staging antes de desviar el tráfico real de producción.
+
+---
+
+## 4. Protocolo de Notificación de Incidentes Técnicos
+Ante la confirmación de una brecha de seguridad (ej. exfiltración masiva de datos mediante SQLi), se activará el siguiente flujo de comunicación en un plazo máximo de **1 hora**:
